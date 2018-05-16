@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "babel": {
-   "presets": [
+    "presets": [
       "env",
       "react",
       "stage-2"
