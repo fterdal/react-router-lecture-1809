@@ -1,12 +1,15 @@
 module.exports = {
   mode: 'development',
   entry: [
-    '@babel/polyfill', // enables async-await
+    //'@babel/polyfill', // enables async-await
     './react/index.js',
   ],
   output: {
     path: __dirname,
-    filename: './public/bundle.js'
+    filename: './bundle.js'
+  },
+  devServer: {
+    contentBase: './public'
   },
   devtool: 'source-map',
   module: {
@@ -14,7 +17,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        //loader: 'babel-loader'
       }
     ]
   }
