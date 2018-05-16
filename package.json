@@ -5,7 +5,7 @@
   "main": "react/index.js",
   "scripts": {
     "build-watch": "webpack -w",
-    "start": "DEBUG='express:*' && webpack-dev-server"
+    "start": "webpack-dev-server"
   },
   "keywords": [],
   "author": "Finn Terdal",
