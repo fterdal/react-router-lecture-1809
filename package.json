@@ -1,18 +1,17 @@
 {
-  "name": "simple-react-storybook",
+  "name": "Mini-React",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A Very Minimal React Configuration",
+  "main": "react/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack -w",
-    "start-dev": "webpack-dev-server"
+    "build-watch": "webpack -w",
+    "start": "webpack-dev-server"
   },
   "keywords": [],
-  "author": "",
+  "author": "Finn Terdal",
   "license": "ISC",
   "babel": {
-   "presets": [
+    "presets": [
       "env",
       "react",
       "stage-2"
@@ -25,6 +24,7 @@
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
