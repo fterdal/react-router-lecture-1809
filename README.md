@@ -1,8 +1,7 @@
-# Mini React
+# React-Router Demo
 
 To get started:
 
-1. Clone this repo: `git clone https://github.com/fterdal/Mini-React`
-2. Install dependencies: `npm i`
-3. Dance like no one's watching 🕺 💃 🕺 💃 🕺 💃 
-4. Start webpack-dev-server: `npm start`
+1. Install dependencies: `npm i`
+2. Be real spooky, cause its October. 🎃  👻  🧟‍♀️ 🧛‍♂️
+3. Start webpack-dev-server: `npm start`
