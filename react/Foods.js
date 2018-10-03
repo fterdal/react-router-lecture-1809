@@ -1,5 +1,5 @@
 import React from 'react'
-import { MenuItem } from './MenuItem';
+import MenuItem from './MenuItem';
 import { Link, Route } from 'react-router-dom';
 
 export const DummyComp = () => {
@@ -9,7 +9,7 @@ export const DummyComp = () => {
   )
 }
 
-export const Foods = () => {
+export const Foods = (props) => {
   const foods = [
     {
       id: 1,
@@ -40,16 +40,26 @@ export const Foods = () => {
       price: '7.00',
     },
   ]
+  if (props.match.params.id) {
+    const { id } = props.match.params
+    console.log('FOOD MATCHED!')
+    return (
+      <div>
+        <h1 className="title">Single Food</h1>
+        <MenuItem item={foods[id - 1]} type="food" />
+      </div>
+    )
+  }
   return (
     <div>
       <h1 className="title">Food</h1>
       <ul className="tile">
         {foods.map(food => (
-          <MenuItem key={food.id} item={food} />
+          <MenuItem key={food.id} item={food} type="food" />
         ))}
       </ul>
       <Link to="/dummy">Get the dummy!</Link>
-      <Route path="/dummy" component={DummyComp} />
+      <Route path="/dummy" component={DummyComp} type="food" />
     </div>
   )
 }

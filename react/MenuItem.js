@@ -1,11 +1,16 @@
 import React from 'react'
+import { Link, withRouter } from 'react-router-dom'
 
-export const MenuItem = ({ item }) => {
+export const MenuItem = (props) => {
+  const { item, type } = props
+  console.log('props', props)
   return (
     <div className="card box">
-      <div className="card-image">
-        <img src={item.imgUrl} />
-      </div>
+      <Link to={`/${type}/${item.id}`} >
+        <div className="card-image">
+          <img src={item.imgUrl} />
+        </div>
+      </Link>
       <div className="card-content">
         <p className="title is-4">{item.name}</p>
         <p className="subtitle is-6">${item.price}</p>
@@ -15,4 +20,4 @@ export const MenuItem = ({ item }) => {
   )
 }
 
-export default MenuItem
+export default withRouter(MenuItem)

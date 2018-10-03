@@ -15,10 +15,12 @@ const App = () => (
       </nav>
       {/* We want to render this component when the url matches / */}
       <Switch>
+        <Route path="/drinks/:id" component={Drinks} />
         <Route path="/drinks" component={Drinks} />
+        <Route path="/food/:id" component={Foods} />
         <Route path="/food" component={Foods} />
         {/* <Route path="/dummy" component={DummyComp} /> */}
-        {/* <Route path="/" component={Homepage} /> */}
+        <Route path="/" component={Homepage} />
       </Switch>
     </div>
   </Router>
