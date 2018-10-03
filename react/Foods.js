@@ -1,5 +1,13 @@
 import React from 'react'
 import { MenuItem } from './MenuItem';
+import { Link, Route } from 'react-router-dom';
+
+export const DummyComp = () => {
+
+  return (
+    <h1>HELLO I'M JUST A DUMMY DOMPONENT 😕😕😕😕😕😕</h1>
+  )
+}
 
 export const Foods = () => {
   const foods = [
@@ -40,6 +48,8 @@ export const Foods = () => {
           <MenuItem key={food.id} item={food} />
         ))}
       </ul>
+      <Link to="/dummy">Get the dummy!</Link>
+      <Route path="/dummy" component={DummyComp} />
     </div>
   )
 }

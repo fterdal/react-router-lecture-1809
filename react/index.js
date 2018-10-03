@@ -2,22 +2,26 @@ import React from 'react'
 import { render } from 'react-dom'
 import Homepage from './Homepage'
 import Drinks from './Drinks'
-import Foods from './Foods'
+import Foods, { DummyComp } from './Foods'
+import { HashRouter as Router, Link, Route, Switch } from 'react-router-dom'
 
 const App = () => (
-  <div className="container">
-    <nav className="navbar center">
-      <a className="navbar-item" href="#">Link A</a>
-      <a className="navbar-item" href="#">Link B</a>
-      <a className="navbar-item" href="#">Link C</a>
-    </nav>
-    {/* We want to render this component when the url matches / */}
-    <Homepage />
-    {/* We want to render this component when the url matches /drinks */}
-    <Drinks />
-    {/* We want to render this component when the url matches /foods */}
-    <Foods />
-  </div>
+  <Router>
+    <div className="container">
+      <nav className="navbar center">
+        <Link to="/" className="navbar-item">Home</Link>
+        <Link to="/drinks" className="navbar-item">Drinks</Link>
+        <Link to="food" className="navbar-item">Food</Link>
+      </nav>
+      {/* We want to render this component when the url matches / */}
+      <Switch>
+        <Route path="/drinks" component={Drinks} />
+        <Route path="/food" component={Foods} />
+        {/* <Route path="/dummy" component={DummyComp} /> */}
+        {/* <Route path="/" component={Homepage} /> */}
+      </Switch>
+    </div>
+  </Router>
 )
 
 render(
