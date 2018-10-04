@@ -3,7 +3,6 @@ import { Link, withRouter } from 'react-router-dom'
 
 export const MenuItem = (props) => {
   const { item, type } = props
-  console.log('props', props)
   return (
     <div className="card box">
       <Link to={`/${type}/${item.id}`} >
