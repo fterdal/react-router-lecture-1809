@@ -1,5 +1,6 @@
 import React from 'react'
 import MenuItem from './MenuItem';
+import { getById } from './dummyData';
 
 export const Drinks = (props) => {
   const { drinks } = props
@@ -8,7 +9,7 @@ export const Drinks = (props) => {
     return (
       <div>
         <h1 className="title">Single Drink</h1>
-        <MenuItem item={drinks[id - 1]} type="drinks" />
+        <MenuItem item={getById(drinks, id)} type="drinks" />
       </div>
     )
   }

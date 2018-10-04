@@ -1,6 +1,7 @@
 import React from 'react'
 import MenuItem from './MenuItem';
 import { Link, Route } from 'react-router-dom';
+import { getById } from './dummyData';
 
 export const Foods = (props) => {
   const { foods } = props
@@ -9,7 +10,7 @@ export const Foods = (props) => {
     return (
       <div>
         <h1 className="title">Single Food</h1>
-        <MenuItem item={foods[id - 1]} type="food" />
+        <MenuItem item={getById(foods, id)} type="food" />
       </div>
     )
   }
